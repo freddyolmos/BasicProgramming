@@ -23,6 +23,22 @@
                 }
             }
 
+            function juego(jugador1,pc1){
+
+                if(jugador1 == pc1) return "EMPATE"
+                else if (jugador1==1 && pc1==3){
+                    return "GANASTE"
+                } 
+                else if (jugador1==2 && pc1==1){
+                    return "GANASTE"
+                } 
+                else if (jugador1==3 && pc1==2){
+                    return "GANASTE"
+                } 
+                else return "PERDISTE"
+                 
+            }
+
             let jugador = 0
             let pc = 0
             let ganar = 0
@@ -35,23 +51,10 @@
 
                 alert("Has elegido "+eleccion(jugador))
                 alert("La PC ha elegido "+eleccion(pc))
+                alert(juego(jugador,pc))
 
-                if(jugador == pc) alert("EMPATE")
-                else if (jugador==1 && pc==3){
-                    alert("GANASTE")
-                    ganar++
-                } 
-                else if (jugador==2 && pc==1){
-                    alert("GANASTE")
-                    ganar++
-                } 
-                else if (jugador==3 && pc==2){
-                    alert("GANASTE")
-                    ganar++
-                } 
-                else {alert("PERDISTE")
-                    perder++
-                } 
+                if(juego(jugador,pc)=="GANASTE") ganar++
+                if(juego(jugador,pc)=="PERDISTE") perder++
             }
 
             alert("Ganaste "+ganar+" veces. Perdiste "+perder+" veces.")
